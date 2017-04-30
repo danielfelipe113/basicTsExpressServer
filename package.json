@@ -16,7 +16,6 @@
     "start": "gulp serve"
   },
   "dependencies": {
-    "@google-cloud/vision": "^0.11.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
