@@ -1,7 +1,0 @@
-const path = require('path');
-module.exports = {
-    port: process.env.PORT || 3000,
-    rootPath: path.normalize(`${__dirname}/../`)
-};
-
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jb25maWcvY29uZmlnLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sSUFBSSxHQUFHLE9BQU8sQ0FBQyxNQUFNLENBQUMsQ0FBQztBQUU3QixNQUFNLENBQUMsT0FBTyxHQUFHO0lBQ2YsSUFBSSxFQUFFLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxJQUFJLElBQUk7SUFDOUIsUUFBUSxFQUFFLElBQUksQ0FBQyxTQUFTLENBQUMsR0FBRyxTQUFTLE1BQU0sQ0FBQztDQUM3QyxDQUFDIiwiZmlsZSI6InNyYy9jb25maWcvY29uZmlnLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgcGF0aCA9IHJlcXVpcmUoJ3BhdGgnKTtcblxubW9kdWxlLmV4cG9ydHMgPSB7XG4gIHBvcnQ6IHByb2Nlc3MuZW52LlBPUlQgfHwgMzAwMCxcbiAgcm9vdFBhdGg6IHBhdGgubm9ybWFsaXplKGAke19fZGlybmFtZX0vLi4vYClcbn07XG5cbiJdfQ==
