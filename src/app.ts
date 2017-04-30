@@ -20,12 +20,11 @@ export class Server {
         this.app = express();
         new Routes(this.app).routes();
         this.app.use(json());
-        this.app.set('views', `./views`);
+        this.app.set('views', `${config.rootPath}/views`);
         this.app.engine('html', require('ejs').renderFile);
         this.app.set('view engine', 'html');
-        this.app.use(morgan('combined'));
+        this.app.use(morgan('dev'));
         this.app.listen(config.port, () => {
-            console.log(config)
             winston.log('info', '--> Server successfully started at port %d', config.port);
         });
     }

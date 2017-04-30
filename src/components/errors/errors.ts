@@ -11,10 +11,16 @@ export default class Errors {
   }
 
   pageNotFound(req: Request, res: Response): void {
-    res.status(404);
-    res.render('404', {}, (err: any, html: any) => {
-      if (err) {
-        return res.status(404).json({status: 404});
+    let viewFilePath = '404';
+    let statusCode = 404;
+    let result = {
+      status: statusCode
+    };
+
+    res.status(result.status);
+    res.render(viewFilePath, {}, (err: any, html: any) => {
+      if(err) {
+        return res.status(result.status).json(result);
       }
       res.send(html);
     });

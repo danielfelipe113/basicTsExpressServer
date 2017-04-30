@@ -8,14 +8,14 @@ import {
     NextFunction
 } from 'express';
 
-import VisionApi from './api/vision/index';
+import ThingsApi from './api/things/index';
 
 export default class {
   errors: Errors;
-  visionApi: VisionApi;
+  thingsApi: ThingsApi;
   constructor(private app: any) {
     this.errors = new Errors();
-    this.visionApi = new VisionApi();
+    this.thingsApi = new ThingsApi();
   }
 
   routes() {
@@ -27,8 +27,10 @@ export default class {
       res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
       next();
     });
+
     // Insert routes below
-    this.app.use('/api/vision', this.visionApi.routes());
+    this.app.use('/api/things', this.thingsApi.routes());
+
     // All undefined asset or api routes should return a 404
     this.app.route('/:url(api|auth|components|app|bower_components|assets)/*')
       .get(this.errors['pageNotFound']);
