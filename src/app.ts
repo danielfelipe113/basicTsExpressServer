@@ -7,14 +7,13 @@ import {
     Request,
     Response
 } from 'express';
-import Config  from './config/config';
 import Routes from './routes';
+const config = require('./config/config');
 /**
  * Root class of your node server.
  * Can be used for basic configurations, for instance starting up the server or registering middleware.
  */
 export class Server {
-    private config: Config = new Config();
     private app: Express;
 
     constructor() {
@@ -25,8 +24,8 @@ export class Server {
         this.app.engine('html', require('ejs').renderFile);
         this.app.set('view engine', 'html');
         this.app.use(morgan('combined'));
-        this.app.listen(this.config.port, () => {
-            winston.log('info', '--> Server successfully started at port %d', this.config.port);
+        this.app.listen(config.port, () => {
+            winston.log('info', '--> Server successfully started at port %d', config.port);
         });
     }
 }

@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import gulpPlugins from 'gulp-load-plugins';
 import del from 'del';
 import runSequence from 'run-sequence';
+
 const plugins = gulpPlugins();
 const tsProject = plugins.typescript.createProject('tsconfig.json');
 
@@ -11,7 +12,6 @@ const foldersToClean = [
 ];
 
 const tsFolders = ['./src/**/*.ts', './test/**/*.ts'];
-process.env.PORT = process.env.PORT || 1337;
 
 /*
   Tasks
@@ -58,6 +58,8 @@ gulp.task('build', cb => {
 });
 
 gulp.task('startServer', () => {
+  let config = require('./build/src/config/config.js');
+  process.env.PORT = process.env.PORT || config.port;
   const server = plugins.nodemon({
     ext: 'ts js json',
     script: 'build/src/app.js',

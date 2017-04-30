@@ -1,8 +1,4 @@
-const path = require('path');
+module.exports = {
+  port: process.env.PORT || 3000
+};
 
-export default class Config {
-  port: number;
-  constructor() {
-    this.port = process.env.PORT || 1337;
-  }
-}
