@@ -25,6 +25,7 @@ export class Server {
         this.app.set('view engine', 'html');
         this.app.use(morgan('combined'));
         this.app.listen(config.port, () => {
+            console.log(config)
             winston.log('info', '--> Server successfully started at port %d', config.port);
         });
     }
